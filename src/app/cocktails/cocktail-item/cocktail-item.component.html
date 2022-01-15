@@ -1,0 +1,33 @@
+<div class="card" style="width: 18rem;">
+   <img [src]="cocktail.img" class="card-img-top" style="cursor: pointer" (click)="openCheckoutModal()" [alt]="cocktail.name">
+  <div class="card-body">
+    <h5 class="card-title" style="cursor: pointer" (click)="openCheckoutModal()">{{ cocktail.name }}</h5>
+    <p class="card-text">Type: {{ cocktail.type }} cocktail</p>
+  </div>
+</div>
+
+<app-modal
+  title="Cocktail is detail information"
+  [isOpen]="modalOpen"
+  (close)="closeCheckoutModal()"
+>
+    <div class="p-1" style="max-width: 400px">
+        <img [src]="cocktail.img" class="align-self-center" [alt]="cocktail.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ cocktail.name }}</h5>
+          <p class="card-text"><b>Type:</b> {{ cocktail.type }} cocktail</p>
+          <p class="card-text"><b>Description:</b> {{ cocktail.description }}</p>
+          <p class="card-text"><strong>List of ingredients: </strong></p>
+          <ul class="list-group p-0">
+            <li class="list-group-item p-0" *ngFor="let ing of cocktail.ingredients">
+              {{ ing.amount }}{{ing.unit}}   {{ ing.name }}
+            </li>
+          </ul>
+          <p class="card-text"><b>recipe:</b> {{ cocktail.makeDescription }}</p>
+        </div>
+    </div>
+    <button
+      class="btn btn-danger"
+      (click)="closeCheckoutModal()"
+    >Cancel</button>
+</app-modal>

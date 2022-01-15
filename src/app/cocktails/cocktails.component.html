@@ -1,0 +1,8 @@
+<div class="row p-4 pl-5">
+  <div class="card-group">
+    <app-cocktail-item
+      *ngFor="let cocktail of cocktails"
+      [cocktail]="cocktail"
+    ></app-cocktail-item>
+  </div>
+</div>
