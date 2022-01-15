@@ -37,18 +37,6 @@ export class CocktailsService {
       });
   }
 
-  fetchCocktail(id:string) {
-    return this.http.get<Cocktail | null>(`https://project-server-788da-default-rtdb.firebaseio.com/cocktails/${id}.json`).pipe(
-      map(result => {
-        if (!result) {
-          return null;
-        }
-        return new Cocktail(id, result.name, result.img, result.type, result.description,
-          result.ingredients, result.makeDescription);
-      }),
-    );
-  }
-
   addNewCocktail(cocktail: Cocktail) {
     const body ={
       name: cocktail.name,

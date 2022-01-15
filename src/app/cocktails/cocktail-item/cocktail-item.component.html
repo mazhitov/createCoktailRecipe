@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<div class="card mr-3" style="width: 18rem;">
    <img [src]="cocktail.img" class="card-img-top" style="cursor: pointer" (click)="openCheckoutModal()" [alt]="cocktail.name">
   <div class="card-body">
     <h5 class="card-title" style="cursor: pointer" (click)="openCheckoutModal()">{{ cocktail.name }}</h5>
@@ -12,7 +12,7 @@
   (close)="closeCheckoutModal()"
 >
     <div class="p-1" style="max-width: 400px">
-        <img [src]="cocktail.img" class="align-self-center" [alt]="cocktail.name">
+        <img [src]="cocktail.img" class="card-img-top" [alt]="cocktail.name">
         <div class="card-body">
           <h5 class="card-title">{{ cocktail.name }}</h5>
           <p class="card-text"><b>Type:</b> {{ cocktail.type }} cocktail</p>
@@ -20,8 +20,11 @@
           <p class="card-text"><strong>List of ingredients: </strong></p>
           <ul class="list-group p-0">
             <li class="list-group-item p-0" *ngFor="let ing of cocktail.ingredients">
-              {{ ing.amount }}{{ing.unit}}   {{ ing.name }}
+              <span>{{ ing.amount }}</span>
+              <span class="mr-3">{{ing.unit}}</span>
+              <span>{{ ing.ingName }}</span>
             </li>
+            <li>
           </ul>
           <p class="card-text"><b>recipe:</b> {{ cocktail.makeDescription }}</p>
         </div>

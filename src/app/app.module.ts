@@ -9,6 +9,9 @@ import { CocktailsComponent } from './cocktails/cocktails.component';
 import { CocktailItemComponent } from './cocktails/cocktail-item/cocktail-item.component';
 import { NotFoundComponent } from './not-found.component';
 import { ModalComponent } from './modal/modal.component';
+import { NewCocktailComponent } from './new-cocktail/new-cocktail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidateImgUrlDirective } from './new-cocktail/validate-img-url.directive';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,15 @@ import { ModalComponent } from './modal/modal.component';
     CocktailsComponent,
     NotFoundComponent,
     CocktailItemComponent,
-    ModalComponent
+    ModalComponent,
+    ValidateImgUrlDirective,
+    NewCocktailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
