@@ -5,7 +5,7 @@ export class Cocktail {
     public img: string,
     public type: string,
     public description: string,
-    public ingredients = [{name: '', amount: '', unit: ''}],
+    public ingredients = [{ingName: '', amount: 0, unit: ''}],
     public makeDescription: string,
   ) {
   }
